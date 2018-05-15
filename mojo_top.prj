@@ -1,0 +1,2 @@
+verilog work "button.v"
+verilog work "src/mojo_top.v"

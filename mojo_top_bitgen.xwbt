@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=E:\FPGA\project\VGA_test_20180514\mojo_top.ncd
+OUTFILE=E:\FPGA\project\VGA_test_20180514\mojo_top.bit
+FAMILY=Spartan6
+PART=xc6slx9-2tqg144
+WORKINGDIR=E:\FPGA\project\VGA_test_20180514
+LICENSE=WebPack
+USER_INFO=211518602_0_0_119

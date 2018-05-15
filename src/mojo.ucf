@@ -1,0 +1,30 @@
+#Created by Constraints Editor (xc6slx9-tqg144-3) - 2012/11/05
+NET "clk" TNM_NET = clk;
+TIMESPEC TS_clk = PERIOD "clk" 50 MHz HIGH 50%;
+
+# PlanAhead Generated physical constraints 
+NET "clk" LOC = P56 | IOSTANDARD = LVTTL;
+NET "rst_n" LOC = P38 | IOSTANDARD = LVTTL;
+
+NET "cclk" LOC = P70 | IOSTANDARD = LVTTL;
+
+NET "led<0>" LOC = P134 | IOSTANDARD = LVTTL;
+NET "led<1>" LOC = P133 | IOSTANDARD = LVTTL;
+NET "led<2>" LOC = P132 | IOSTANDARD = LVTTL;
+NET "led<3>" LOC = P131 | IOSTANDARD = LVTTL;
+NET "led<4>" LOC = P127 | IOSTANDARD = LVTTL;
+NET "led<5>" LOC = P126 | IOSTANDARD = LVTTL;
+NET "led<6>" LOC = P124 | IOSTANDARD = LVTTL;
+NET "led<7>" LOC = P123 | IOSTANDARD = LVTTL;
+
+NET "red_out" LOC = P21 | IOSTANDARD = LVTTL;
+NET "green_out" LOC = P22 | IOSTANDARD = LVTTL;
+NET "blue_out" LOC = P23 | IOSTANDARD = LVTTL;
+NET "hsync_out" LOC = P26 | IOSTANDARD = LVTTL;
+NET "vsync_out" LOC = P27 | IOSTANDARD = LVTTL;
+
+NET "joystick_button" LOC = P50 | IOSTANDARD = LVTTL;
+NET "joystick_x" LOC = P40 | IOSTANDARD = LVTTL;
+NET "joystick_y" LOC = P51 | IOSTANDARD = LVTTL;
+
+

@@ -1,0 +1,536 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.18 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.18 secs
+ 
+--> Reading design: mojo_top.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "mojo_top.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "mojo_top"
+Output Format                      : NGC
+Target Device                      : xc6slx9-2-tqg144
+
+---- Source Options
+Top Module Name                    : mojo_top
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "E:\FPGA\project\VGA_test_20180514\button.v" into library work
+Parsing module <button>.
+Analyzing Verilog file "E:\FPGA\project\VGA_test_20180514\src\mojo_top.v" into library work
+Parsing module <mojo_top>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <mojo_top>.
+
+Elaborating module <button>.
+WARNING:HDLCompiler:413 - "E:\FPGA\project\VGA_test_20180514\src\mojo_top.v" Line 46: Result of 3-bit expression is truncated to fit in 2-bit target.
+WARNING:HDLCompiler:413 - "E:\FPGA\project\VGA_test_20180514\src\mojo_top.v" Line 106: Result of 11-bit expression is truncated to fit in 10-bit target.
+WARNING:HDLCompiler:413 - "E:\FPGA\project\VGA_test_20180514\src\mojo_top.v" Line 117: Result of 12-bit expression is truncated to fit in 11-bit target.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <mojo_top>.
+    Related source file is "E:\FPGA\project\VGA_test_20180514\src\mojo_top.v".
+WARNING:Xst:647 - Input <cclk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <joystick_x> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <uart_rx> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 10-bit register for signal <countx_q>.
+    Found 2-bit register for signal <mode_q>.
+    Found 11-bit register for signal <ctr_q>.
+    Found 2-bit register for signal <mode_d>.
+    Found 2-bit adder for signal <mode_q[1]_GND_1_o_add_2_OUT> created at line 46.
+    Found 10-bit adder for signal <countx_d[9]_GND_1_o_add_14_OUT> created at line 106.
+    Found 11-bit adder for signal <ctr_d> created at line 117.
+    Found 1-bit 3-to-1 multiplexer for signal <mode_q[1]_GND_1_o_Mux_5_o> created at line 56.
+    Found 1-bit 4-to-1 multiplexer for signal <mode_q[1]_GND_1_o_Mux_6_o> created at line 56.
+    Found 1-bit 4-to-1 multiplexer for signal <mode_q[1]_ctr_q[10]_Mux_7_o> created at line 56.
+WARNING:Xst:737 - Found 1-bit latch for signal <countx_d<9>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <countx_d<8>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <countx_d<7>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <countx_d<6>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <countx_d<5>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <countx_d<4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <countx_d<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <countx_d<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <countx_d<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <countx_d<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <vsync>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 11-bit comparator lessequal for signal <hsync> created at line 93
+    Found 11-bit comparator greater for signal <ctr_q[10]_PWR_1_o_LessThan_10_o> created at line 97
+    Found 10-bit comparator greater for signal <countx_q[9]_GND_1_o_LessThan_11_o> created at line 98
+    Found 11-bit comparator greater for signal <PWR_1_o_ctr_d[10]_LessThan_23_o> created at line 120
+    Summary:
+	inferred   3 Adder/Subtractor(s).
+	inferred  25 D-type flip-flop(s).
+	inferred  11 Latch(s).
+	inferred   4 Comparator(s).
+	inferred   7 Multiplexer(s).
+Unit <mojo_top> synthesized.
+
+Synthesizing Unit <button>.
+    Related source file is "E:\FPGA\project\VGA_test_20180514\button.v".
+    Found 2-bit register for signal <sync_q>.
+    Found 20-bit register for signal <ctr_q>.
+    Found 20-bit adder for signal <ctr_q[19]_GND_2_o_add_1_OUT> created at line 17.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  22 D-type flip-flop(s).
+Unit <button> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 4
+ 10-bit adder                                          : 1
+ 11-bit adder                                          : 1
+ 2-bit adder                                           : 1
+ 20-bit adder                                          : 1
+# Registers                                            : 6
+ 10-bit register                                       : 1
+ 11-bit register                                       : 1
+ 2-bit register                                        : 3
+ 20-bit register                                       : 1
+# Latches                                              : 11
+ 1-bit latch                                           : 11
+# Comparators                                          : 4
+ 10-bit comparator greater                             : 1
+ 11-bit comparator greater                             : 2
+ 11-bit comparator lessequal                           : 1
+# Multiplexers                                         : 7
+ 1-bit 2-to-1 multiplexer                              : 3
+ 1-bit 3-to-1 multiplexer                              : 1
+ 1-bit 4-to-1 multiplexer                              : 2
+ 10-bit 2-to-1 multiplexer                             : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+Synthesizing (advanced) Unit <button>.
+The following registers are absorbed into counter <ctr_q>: 1 register on signal <ctr_q>.
+Unit <button> synthesized (advanced).
+
+Synthesizing (advanced) Unit <mojo_top>.
+The following registers are absorbed into counter <ctr_q>: 1 register on signal <ctr_q>.
+Unit <mojo_top> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 3
+ 10-bit adder                                          : 1
+ 11-bit adder                                          : 1
+ 2-bit adder                                           : 1
+# Counters                                             : 2
+ 11-bit up counter                                     : 1
+ 20-bit up counter                                     : 1
+# Registers                                            : 16
+ Flip-Flops                                            : 16
+# Comparators                                          : 4
+ 10-bit comparator greater                             : 1
+ 11-bit comparator greater                             : 2
+ 11-bit comparator lessequal                           : 1
+# Multiplexers                                         : 7
+ 1-bit 2-to-1 multiplexer                              : 3
+ 1-bit 3-to-1 multiplexer                              : 1
+ 1-bit 4-to-1 multiplexer                              : 2
+ 10-bit 2-to-1 multiplexer                             : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <mojo_top> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block mojo_top, actual ratio is 1.
+
+Final Macro Processing ...
+
+Processing Unit <mojo_top> :
+	Found 2-bit shift register for signal <my_button/sync_q_1>.
+Unit <mojo_top> processed.
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 45
+ Flip-Flops                                            : 45
+# Shift Registers                                      : 1
+ 2-bit shift register                                  : 1
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : mojo_top.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 163
+#      GND                         : 1
+#      INV                         : 6
+#      LUT1                        : 29
+#      LUT2                        : 17
+#      LUT3                        : 5
+#      LUT4                        : 3
+#      LUT5                        : 9
+#      LUT6                        : 31
+#      MUXCY                       : 29
+#      MUXF7                       : 1
+#      VCC                         : 1
+#      XORCY                       : 31
+# FlipFlops/Latches                : 57
+#      FD                          : 25
+#      FDE                         : 1
+#      FDRE                        : 20
+#      LD                          : 10
+#      LD_1                        : 1
+# Shift Registers                  : 1
+#      SRLC16E                     : 1
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 16
+#      IBUF                        : 3
+#      OBUF                        : 13
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx9tqg144-2 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:              57  out of  11440     0%  
+ Number of Slice LUTs:                  101  out of   5720     1%  
+    Number used as Logic:               100  out of   5720     1%  
+    Number used as Memory:                1  out of   1440     0%  
+       Number used as SRL:                1
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:    112
+   Number with an unused Flip Flop:      55  out of    112    49%  
+   Number with an unused LUT:            11  out of    112     9%  
+   Number of fully used LUT-FF pairs:    46  out of    112    41%  
+   Number of unique control sets:         5
+
+IO Utilization: 
+ Number of IOs:                          20
+ Number of bonded IOBs:                  17  out of    102    16%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-------------------------------------------------------------------+------------------------+-------+
+Clock Signal                                                       | Clock buffer(FF name)  | Load  |
+-------------------------------------------------------------------+------------------------+-------+
+stick(my_button/out<19>4:O)                                        | NONE(*)(mode_d_0)      | 2     |
+clk                                                                | BUFGP                  | 45    |
+ctr_q[10]_PWR_1_o_LessThan_10_o(ctr_q[10]_PWR_1_o_LessThan_10_o1:O)| NONE(*)(countx_d_9)    | 11    |
+-------------------------------------------------------------------+------------------------+-------+
+(*) These 2 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -2
+
+   Minimum period: 4.732ns (Maximum Frequency: 211.327MHz)
+   Minimum input arrival time before clock: 4.502ns
+   Maximum output required time after clock: 5.803ns
+   Maximum combinational path delay: 6.371ns
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 4.732ns (frequency: 211.327MHz)
+  Total number of paths / destination ports: 1027 / 82
+-------------------------------------------------------------------------
+Delay:               4.732ns (Levels of Logic = 2)
+  Source:            my_button/ctr_q_4 (FF)
+  Destination:       my_button/ctr_q_0 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: my_button/ctr_q_4 to my_button/ctr_q_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDRE:C->Q             3   0.525   1.221  my_button/ctr_q_4 (my_button/ctr_q_4)
+     LUT6:I0->O            1   0.254   0.910  stick_inv2 (stick_inv2)
+     LUT5:I2->O           20   0.235   1.285  stick_inv4 (stick_inv)
+     FDRE:CE                   0.302          my_button/ctr_q_0
+    ----------------------------------------
+    Total                      4.732ns (1.316ns logic, 3.416ns route)
+                                       (27.8% logic, 72.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 28 / 22
+-------------------------------------------------------------------------
+Offset:              4.502ns (Levels of Logic = 3)
+  Source:            rst_n (PAD)
+  Destination:       ctr_q_0 (FF)
+  Destination Clock: clk rising
+
+  Data Path: rst_n to ctr_q_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            13   1.328   1.553  rst_n_IBUF (rst_n_IBUF)
+     LUT6:I0->O           11   0.254   1.039  rst_PWR_1_o_OR_52_o3 (rst_PWR_1_o_OR_52_o)
+     LUT2:I1->O            1   0.254   0.000  ctr_q_0_rstpot (ctr_q_0_rstpot)
+     FD:D                      0.074          ctr_q_0
+    ----------------------------------------
+    Total                      4.502ns (1.910ns logic, 2.592ns route)
+                                       (42.4% logic, 57.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 21 / 4
+-------------------------------------------------------------------------
+Offset:              5.803ns (Levels of Logic = 2)
+  Source:            ctr_q_9 (FF)
+  Destination:       green_out (PAD)
+  Source Clock:      clk rising
+
+  Data Path: ctr_q_9 to green_out
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               9   0.525   1.431  ctr_q_9 (ctr_q_9)
+     LUT6:I0->O            1   0.254   0.681  Mmux_green_out11 (green_out_OBUF)
+     OBUF:I->O                 2.912          green_out_OBUF (green_out)
+    ----------------------------------------
+    Total                      5.803ns (3.691ns logic, 2.112ns route)
+                                       (63.6% logic, 36.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'ctr_q[10]_PWR_1_o_LessThan_10_o'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              5.110ns (Levels of Logic = 2)
+  Source:            vsync (LATCH)
+  Destination:       vsync_out (PAD)
+  Source Clock:      ctr_q[10]_PWR_1_o_LessThan_10_o rising
+
+  Data Path: vsync to vsync_out
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LD_1:G->Q             1   0.581   0.681  vsync (vsync)
+     INV:I->O              1   0.255   0.681  vsync_out1_INV_0 (vsync_out_OBUF)
+     OBUF:I->O                 2.912          vsync_out_OBUF (vsync_out)
+    ----------------------------------------
+    Total                      5.110ns (3.748ns logic, 1.362ns route)
+                                       (73.3% logic, 26.7% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 3 / 3
+-------------------------------------------------------------------------
+Delay:               6.371ns (Levels of Logic = 3)
+  Source:            joystick_button (PAD)
+  Destination:       red_out (PAD)
+
+  Data Path: joystick_button to red_out
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             3   1.328   1.196  joystick_button_IBUF (joystick_button_IBUF)
+     LUT6:I1->O            1   0.254   0.681  Mmux_green_out11 (green_out_OBUF)
+     OBUF:I->O                 2.912          green_out_OBUF (green_out)
+    ----------------------------------------
+    Total                      6.371ns (4.494ns logic, 1.877ns route)
+                                       (70.5% logic, 29.5% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock clk
+-------------------------------+---------+---------+---------+---------+
+                               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-------------------------------+---------+---------+---------+---------+
+clk                            |    4.732|         |         |         |
+ctr_q[10]_PWR_1_o_LessThan_10_o|         |    6.133|         |         |
+stick                          |    1.280|         |         |         |
+-------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock ctr_q[10]_PWR_1_o_LessThan_10_o
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    2.686|         |    1.286|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock stick
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    2.375|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 6.00 secs
+Total CPU time to Xst completion: 6.00 secs
+ 
+--> 
+
+Total memory usage is 328720 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   17 (   0 filtered)
+Number of infos    :    1 (   0 filtered)
+
